@@ -19,7 +19,7 @@
 - 🔓 **Open Source:** Code is completely yours. Free to use for personal and commercial applications.
 
 **[TET]**
-- ⚡ **Kmaan :** Laiha dependénsia ne'ebé la presiza. lailais no uza RAM kiik.
+- ⚡ **Kmaan :** Laiha dependénsia ne'ebé la presiza. lailais no konsumu RAM kiik.
 - 🛡️ **Seguru:** Protesaun XSS ne'ebé matenek husi Latte Engine no kontra SQL-Injection husi Medoo.
 - 🚀 **Kbiit :** Estrutura MVC  hamutuk ho Bramus Router, prontu ba eskala Emprezariál.
 - 🔓 **Open Source:** Kódigu ne'e Ita-boot nian tomak. Livre atu uza ba aplikasaun pesoál ka komersiál.
