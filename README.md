@@ -19,10 +19,10 @@
 - 🔓 **Open Source:** Code is completely yours. Free to use for personal and commercial applications.
 
 **[TET]**
-- ⚡ **Kmaan (Ringan):** Laiha dependénsia ne'ebé la presiza. Harii atu halai ho lailais no uza RAM uitoan.
-- 🛡️ **Seguru (Aman):** Protesaun XSS ne'ebé matenek husi Latte Engine no kontra SQL-Injection husi Medoo.
-- 🚀 **Kbiit (Powerful):** Estrutura MVC murni hamutuk ho Bramus Router, prontu ba eskala Emprezariál.
-- 🔓 **Open Source:** Kódigu ne'e ita-nian rasik. Livre atu uza ba aplikasaun pesoál ka komersiál.
+- ⚡ **Kmaan :** Laiha dependénsia ne'ebé la presiza. lailais no uza RAM kiik.
+- 🛡️ **Seguru:** Protesaun XSS ne'ebé matenek husi Latte Engine no kontra SQL-Injection husi Medoo.
+- 🚀 **Kbiit :** Estrutura MVC  hamutuk ho Bramus Router, prontu ba eskala Emprezariál.
+- 🔓 **Open Source:** Kódigu ne'e Ita-boot nian tomak. Livre atu uza ba aplikasaun pesoál ka komersiál.
 
 ---
 
@@ -51,5 +51,24 @@
 
 ### Step 1 / Pasu 1: Clone Repository
 ```bash
-git clone [https://github.com/deirainsight/decor.git](https://github.com/deirainsight/decor.git) your-new-project
+git clone https://github.com/deirainsight/decor.git your-new-project
 cd your-new-project
+```
+### Step 2 / Pasu 2: Start Server & Database
+```bash
+podman-compose up -d --build
+```
+### Step 3 / Pasu 3: Install Core Libraries (Composer)
+
+- [EN] Allow Latte Engine to write temporary HTML cache files:
+```bash
+podman exec -it dcs_app composer install
+```
+### Step 4 / Pasu 4: Unlock Cache Folder (Linux/SELinux)
+```bash
+podman exec -it dcs_app chmod -R 777 /var/www/html/storage
+```
+
+
+
+
