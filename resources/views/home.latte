@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{$decor_tittle}</title>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #10b981;
+            --accent-glow: rgba(16, 185, 129, 0.2);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background-image: radial-gradient(circle at top right, var(--accent-glow), transparent 40%);
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo-area { margin-bottom: 2rem; }
+        
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .version {
+            font-size: 1rem;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            vertical-align: middle;
+            margin-left: 10px;
+            -webkit-text-fill-color: #fff;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        /* Grid 4 Pilar Filosofi */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            text-align: left;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .feature-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        footer {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            width: 100%;
+        }
+
+        .heart { color: #ef4444; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-area">
+            <h1>DECOR <span class="version">{$decor_version}</span></h1>
+            <p class="tagline">{$decor_massage}</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">Lightweight</div>
+                <div class="feature-desc">Zero unnecessary dependencies. Built for lightning-fast execution and RAM efficiency.</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-title">Secure</div>
+                <div class="feature-desc">Latte Engine's built-in intelligent XSS protection and Medoo's anti-SQL injection.</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <div class="feature-title">Powerful</div>
+                <div class="feature-desc">A pure MVC structure combined with Bramus Router, ready for enterprise-scale applications.</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔓</div>
+                <div class="feature-title">Open Source</div>
+                <div class="feature-desc">The code is entirely yours. It is free to use for both personal and commercial applications.</div>
+            </div>
+        </div>
+
+        <footer>
+            Designed with <span class="heart">❤</span> by DeiraInsight from Timor-Leste people.<br>
+            <small>Edit <code>app/Controllers</code> to start building your application.</small>
+        </footer>
+    </div>
+
+</body>
+</html>
