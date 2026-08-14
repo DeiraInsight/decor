@@ -59,8 +59,6 @@ cd your-new-project
 podman-compose up -d --build
 ```
 ### Step 3 / Pasu 3: Install Core Libraries (Composer)
-
-- [EN] Allow Latte Engine to write temporary HTML cache files:
 ```bash
 podman exec -it dcs_app composer install
 ```
