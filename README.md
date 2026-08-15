@@ -71,14 +71,14 @@ podman-compose up -d --build
 
 **[TET]** Instala dependénsia iha kontainer app nian laran.
 ```bash
-podman exec -it dcs_app composer install
+podman-compose exec app composer install
 ```
 ### Step 4 / Pasu 4: Unlock Cache Folder (Linux/SELinux)
 **[EN]** Give permission to the storage folder for caching.
 
 **[TET]** Fó autorizasaun ba folder storage atu bele rai cache.
 ```bash
-podman exec -it dcs_app chmod -R 777 /var/www/html/storage
+podman-compose exec app chmod -R 777 /var/www/html/storage
 ```
 ### Step 5 / Pasu 5: Access the Application
 **[EN]** Open your web browser and navigate to:
