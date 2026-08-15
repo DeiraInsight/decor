@@ -1,31 +1,22 @@
 <?php
-// Lokasi: decor/routes/web.php
 
-// Call library Bramus Router
 $router = new \Bramus\Router\Router();
-// Rute Beranda (SEKARANG MEMANGGIL CONTROLLER!)
+
 $router->get('/', 'App\Controllers\HomeController@index');
 
-// ... sisa kode router lainnya ...
-
-// Rute Beranda (Akan menampilkan teks biasa)
-$router->get('/', function() {
-    echo "<h1>Bramus Router Berfungsi!</h1>";
-    echo "<p>Selamat datang di jantung DeiraCoreSystem v2.</p>";
-    
-});
-
-// Contoh Rute dengan Parameter ID
 $router->get('/tes/(\d+)', function($id) {
-    echo "<h1>Mengetes parameter ID: " . $id . "</h1>";
+    
+    echo "<h1>Mencoba Parameter ID: " . htmlspecialchars($id) . "</h1>";
+    echo "<p>Rute dinamis ini didukung oleh Decor Framework.</p>";
 });
 
-// Rute Error 404
+
 $router->set404(function() {
     header('HTTP/1.1 404 Not Found');
-    echo "<h1 style='color:red;'>404 - Alamat tidak ditemukan di DCS v2!</h1>";
+    echo "<div style='text-align: center; margin-top: 50px; font-family: sans-serif;'>";
+    echo "<h1 style='color: #e74c3c;'>404 - Not Found</h1>";
+    echo "<p>The page you are looking for was not found on the Decor server.</p>";
+    echo "</div>";
 });
-
-// Jalankan sistem routing
 
 $router->run();

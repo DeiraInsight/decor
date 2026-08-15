@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{$decor_tittle}</title>
+    <title>{$decor_title}</title>
     <style>
         :root {
             --bg-dark: #0f172a;
@@ -12,6 +12,7 @@
             --text-muted: #94a3b8;
             --accent: #10b981;
             --accent-glow: rgba(16, 185, 129, 0.2);
+            --code-bg: #0b1120;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -61,59 +62,99 @@
         .tagline {
             font-size: 1.2rem;
             color: var(--text-muted);
-            margin-bottom: 4rem;
+            margin-bottom: 1.5rem;
             font-weight: 300;
         }
 
-        /* Grid 4 Pilar Filosofi */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 4rem;
+        .welcome-box {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--accent);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            backdrop-filter: blur(5px);
         }
 
-        .feature-card {
+        .getting-started {
             background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
-            padding: 2rem 1.5rem;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            padding: 1.5rem;
+            margin: 0 auto 2rem auto;
+            max-width: 600px;
             text-align: left;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
-
-        .feature-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-title {
-            font-size: 1.1rem;
+        .getting-started p {
+            color: var(--text-main);
+            font-size: 1rem;
             font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .code-path {
+            background: var(--code-bg);
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            color: #e2e8f0;
             margin-bottom: 0.5rem;
-            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .feature-desc {
-            font-size: 0.9rem;
+        .code-path:last-child {
+            margin-bottom: 0;
+        }
+
+        .code-label {
             color: var(--text-muted);
-            line-height: 1.5;
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        footer {
+        .code-value {
+            color: #38bdf8;
+        }
+
+        .render-badge {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
-            width: 100%;
+            margin: 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: monospace;
+            transition: all 0.3s ease;
         }
 
-        .heart { color: #ef4444; }
+        .render-badge:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+            color: var(--text-main);
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .render-badge span {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
@@ -121,40 +162,35 @@
     <div class="container">
         <div class="logo-area">
             <h1>DECOR <span class="version">{$decor_version}</span></h1>
-            <p class="tagline">{$decor_massage}</p>
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <div class="feature-title">Lightweight</div>
-                <div class="feature-desc">Zero unnecessary dependencies. Built for lightning-fast execution and RAM efficiency.</div>
-            </div>
+            <p class="tagline">{$decor_message}</p>
             
-            <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <div class="feature-title">Secure</div>
-                <div class="feature-desc">Latte Engine's built-in intelligent XSS protection and Medoo's anti-SQL injection.</div>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <div class="feature-title">Powerful</div>
-                <div class="feature-desc">A pure MVC structure combined with Bramus Router, ready for enterprise-scale applications.</div>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🔓</div>
-                <div class="feature-title">Open Source</div>
-                <div class="feature-desc">The code is entirely yours. It is free to use for both personal and commercial applications.</div>
+            <div class="welcome-box">
+                🎉 <strong>Welcome Aboard!</strong> You have successfully initialized the DECOR Starter Kit. Your perfect foundation to build faster, scale seamlessly, and code with absolute confidence.
             </div>
         </div>
 
-        <footer>
-            Designed with <span class="heart">❤</span> by DeiraInsight from Timor-Leste people.<br>
-            <small>Edit <code>app/Controllers</code> to start building your application.</small>
-        </footer>
+        <div class="getting-started">
+            <p>🚀 Start crafting your masterpiece by editing:</p>
+            <div class="code-path">
+                <span class="code-label">View Page</span>
+                <span class="code-value">resources/views/home.latte</span>
+            </div>
+            <div class="code-path">
+                <span class="code-label">Controller</span>
+                <span class="code-value">app/Controllers/HomeController.php</span>
+            </div>
+        </div>
+
+        <div class="render-badge">
+            ⚡ Page rendered in <span id="render-time">0.00</span> ms
+        </div>
     </div>
 
+    <script>
+        window.addEventListener('load', () => {
+            const time = performance.now().toFixed(2);
+            document.getElementById('render-time').innerText = time;
+        });
+    </script>
 </body>
 </html>
