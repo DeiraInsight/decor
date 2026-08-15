@@ -5,31 +5,30 @@ services:
     build:
       context: .
       dockerfile: Containerfile
-    container_name: dcs_app
     restart: always
     ports:
-      - "8080:80"
+      - "${APP_PORT:-8080}:80"
     volumes:
       - .:/var/www/html:z
     environment:
-      DB_HOST: db
-      DB_NAME: decor_db
-      DB_USER: postgres
-      DB_PASS: decor#12345
-      DB_PORT: 5432
+      DB_HOST: ${DB_HOST:-db}
+      DB_NAME: ${DB_NAME:-decor_db}
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASS: ${DB_PASS:-decor#12345}
+      DB_PORT: ${DB_PORT:-5432}
     depends_on:
       - db
 
   db:
     image: postgres:15-alpine
-    container_name: dcs_postgres
+    # container_name dihapus agar tidak bentrok
     restart: always
     environment:
-      POSTGRES_DB: decor_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: decor#12345
+      POSTGRES_DB: ${DB_NAME:-decor_db}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASS:-decor#12345}
     ports:
-      - "5432:5432"
+      - "${DB_PORT:-5432}:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 
