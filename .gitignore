@@ -1,13 +1,6 @@
-# Abaikan folder library Composer (akan diinstal masing-masing user)
 /vendor/
-
-# Abaikan file cache dari Latte Engine agar tidak bentrok
 /storage/temp/*
 !/storage/temp/.gitkeep
-
-# Abaikan file upload agar proyek baru tidak berisi file dari proyek lama
-/storage/uploads/*
-!/storage/uploads/.gitkeep
-
-# Abaikan konfigurasi rahasia jika ada
+/storage/upload/*
+!/storage/upload/.gitkeep
 .env
