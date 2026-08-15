@@ -66,10 +66,3 @@ podman exec -it dcs_app composer install
 ```bash
 podman exec -it dcs_app chmod -R 777 /var/www/html/storage
 ```
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> 39a6bc628ce0397242d9f0d5bc87c5e3de3e606e
