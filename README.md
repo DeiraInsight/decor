@@ -47,10 +47,12 @@
 ## 4. Quick Start (Installation) / Oinsá Instala
 
 **[EN]** Since Decor uses full containerization, you don't need to install PHP or a database on your local machine. Just ensure you have **Podman** (or Docker) and `podman-compose`.
+
 **[TET]** Tanba Decor uza kontainerizasaun tomak, ita la presiza instala PHP ka database iha ita-nia komputadór. Presiza de'it garante katak ita iha **Podman** (ka Docker) no `podman-compose`.
 
 ### Step 1 / Pasu 1: Clone Repository
 **[EN]** Clone the repository and copy the environment config.
+
 **[TET]** Clone repozitóriu no kopia konfigurasaun ambiente nian.
 ```bash
 git clone https://github.com/deirainsight/decor.git your-new-project
@@ -59,24 +61,28 @@ cp .env.example .env
 ```
 ### Step 2 / Pasu 2: Start Server & Database
 **[EN]** Build and turn on the container machine.
+
 **[TET]** Hahu halakan makina kontainer.
 ```bash
 podman-compose up -d --build
 ```
 ### Step 3 / Pasu 3: Install Core Libraries (Composer)
 **[EN]** Install dependencies inside the dynamic app container.
+
 **[TET]** Instala dependénsia iha kontainer app nian laran.
 ```bash
 podman exec -it dcs_app composer install
 ```
 ### Step 4 / Pasu 4: Unlock Cache Folder (Linux/SELinux)
 **[EN]** Give permission to the storage folder for caching.
+
 **[TET]** Fó autorizasaun ba folder storage atu bele rai cache.
 ```bash
 podman exec -it dcs_app chmod -R 777 /var/www/html/storage
 ```
 ### Step 5 / Pasu 5: Access the Application
 **[EN]** Open your web browser and navigate to:
+
 **[TET]** Loke ita-nia web browser no asesu ba:
 ```bash
 http://localhost:5351
