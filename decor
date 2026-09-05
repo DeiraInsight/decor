@@ -1,0 +1,40 @@
+#!/usr/bin/env php
+<?php
+
+// 1. Panggil autoloader Composer
+require_once __DIR__ . '/vendor/autoload.php';
+
+use System\Container;
+use System\Database;
+use System\Migrator;
+
+// 2. Hidupkan Mesin Inti DECOR (Pilar 1)
+$container = new Container();
+
+// Daftarkan koneksi Database sebagai Singleton agar eksekusi memori tetap efisien
+$container->singleton(Database::class, new Database());
+
+// 3. Tangkap perintah dari terminal pengguna
+$command = $argv[1] ?? null;
+
+// ==========================================
+// DAFTAR PERINTAH DECOR CONSOLE
+// ==========================================
+
+if ($command === 'migrate') {
+    echo "\n🚀 Memulai DECOR Migration Engine...\n";
+    echo "=================================================\n";
+    
+    // Keajaiban Pilar 1: Container merakit Migrator secara otomatis!
+    $migrator = $container->get(Migrator::class);
+    $migrator->run();
+    
+    echo "=================================================\n\n";
+    exit(0);
+}
+
+// Jika perintah tidak dimasukkan atau tidak dikenali
+echo "\n❌ Perintah tidak dikenali atau kosong.\n";
+echo "Gunakan asisten DECOR dengan perintah berikut:\n";
+echo " - php decor migrate   (Mengeksekusi file di src/Migrations/ ke PostgreSQL)\n\n";
+exit(1);

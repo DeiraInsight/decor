@@ -1,0 +1,31 @@
+{layout 'layouts/main.latte'}
+
+{block content}
+    <div class="logo-area">
+        <h1>DECOR <span class="version">{$decor_version}</span></h1>
+        <p class="tagline">{$decor_message}</p>
+        
+        <!-- Kotak Sambutan & Terima Kasih -->
+        <div class="welcome-box">
+            🎉 <strong>Welcome Aboard!</strong> You have successfully initialized the DECOR Starter Kit. Your perfect foundation to build faster, scale seamlessly, and code with absolute confidence.
+        </div>
+    </div>
+
+    <!-- Instruksi Langkah Selanjutnya (Disesuaikan untuk Arsitektur Baru) -->
+    <div class="getting-started">
+        <p>🚀 Start crafting your masterpiece by editing:</p>
+        <div class="code-path">
+            <span class="code-label">View Page</span>
+            <span class="code-value">views/home.latte</span>
+        </div>
+        <div class="code-path">
+            <span class="code-label">Action (Controller)</span>
+            <span class="code-value">src/Actions/HomeAction.php</span>
+        </div>
+    </div>
+
+    <!-- Lencana Kecepatan Render -->
+    <div class="render-badge">
+        ⚡ Page rendered in <span id="render-time">0.00</span> ms
+    </div>
+{/block}

@@ -1,6 +1,11 @@
 <?php
-//public/index.php
 
+// 1. Panggil autoloader dari Composer
 require_once __DIR__ . '/../vendor/autoload.php';
 
-require_once __DIR__ . '/../routes/web.php';
+// 2. Panggil namespace Kernel dari mesin inti DECOR
+use System\Kernel;
+
+// 3. Hidupkan mesin dan jalankan aplikasi!
+$kernel = new Kernel();
+$kernel->boot();
