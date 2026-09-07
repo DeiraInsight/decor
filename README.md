@@ -78,6 +78,7 @@ podman-compose exec app composer install
 
 **[TET]** Fó autorizasaun ba folder storage atu bele rai cache.
 ```bash
+podman-compose exec app chown -R www-data:www-data /var/www/html/storage
 podman-compose exec app chmod -R 775 /var/www/html/storage
 ```
 ### Step 5 / Pasu 5: Access the Application
