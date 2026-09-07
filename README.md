@@ -88,3 +88,31 @@ podman-compose exec app chmod -R 775 /var/www/html/storage
 ```bash
 http://localhost:5351
 ```
+
+
+---
+
+##  Uninstall / Oinsá Halakon Projetu
+
+**[EN]** If you want to completely remove the project, you must first stop the containers. Because the `storage` folder is securely owned by the web server (`www-data`), you will need advanced privileges to delete the directory.
+
+
+### Step 1  Stop and Clean Containers
+**[EN]** Stop the running containers and remove their volumes.
+```bash
+podman-compose down -v
+```
+
+### Step 2 Delete Project Folder
+**[EN]** Move out of the project folder and delete it permanently. Choose one of the commands below depending on your system:
+
+### Option A (Podman Native - Recommended):
+```bash
+cd ..
+podman unshare rm -rf your-new-project
+```
+### Option B (Linux sudo / Root):
+```bash
+cd ..
+sudo rm -rf your-new-project
+```
