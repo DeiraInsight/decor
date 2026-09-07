@@ -1,118 +1,146 @@
-# ⚡ Decor Framework (Starter Kit)
+# ⚡ DECOR Framework
 
-*(🇬🇧 English | 🇹🇱 Tetun)*
+**Build faster, scale seamlessly, and code with absolute confidence.**
 
-## 1. About Decor / Kona-ba Decor
-
-**[EN]** Decor is a Hybrid Native PHP Boilerplate/Starter Kit designed specifically for speed, security, and simplicity. Built entirely on Podman/Docker infrastructure, Decor combines the power of the best Open Source libraries without the bloatware of giant frameworks.
-
-**[TET]** Decor mak Boilerplate / Starter Kit PHP Native Hybrid ne'ebé dezeña espesialmente ba velosidade, seguransa, no simplisidade. Harii tomak iha infrastruktura Podman/Docker nia leten, Decor kombina kbiit husi library Open Source di'ak liu hotu la hodi todan husi framework bo'ot sira.
+Welcome to **DECOR** — a meticulously curated Hybrid Native PHP Boilerplate engineered for speed, uncompromising security, and elegant simplicity. Built entirely on a robust Podman/Docker containerized infrastructure, DECOR harnesses the power of industry-leading open-source libraries while ruthlessly eliminating the bloatware typically found in giant monolithic frameworks.
 
 ---
 
-## 2. Philosophy / Filosofia Decor
+## 🧭 Core Philosophy
 
-**[EN]**
-- ⚡ **Lightweight:** Zero useless dependencies. Built for lightning-fast execution and low RAM usage.
-- 🛡️ **Secure:** Smart XSS protection built into Latte Engine and Anti SQL-Injection from Medoo.
-- 🚀 **Powerful:** Pure MVC structure combined with Bramus Router, ready for Enterprise scale.
-- 🔓 **Open Source:** Code is completely yours. Free to use for personal and commercial applications.
-
-**[TET]**
-- ⚡ **Kmaan :** Laiha dependénsia ne'ebé la presiza. lailais no konsumu RAM kiik.
-- 🛡️ **Seguru:** Protesaun XSS ne'ebé matenek husi Latte Engine no kontra SQL-Injection husi Medoo.
-- 🚀 **Kbiit :** Estrutura MVC  hamutuk ho Bramus Router, prontu ba eskala Emprezariál.
-- 🔓 **Open Source:** Kódigu ne'e Ita-boot nian tomak. Livre atu uza ba aplikasaun pesoál ka komersiál.
+| Principle | Description |
+|-----------|-------------|
+| ⚡ **Lightweight & Fast** | Zero unnecessary dependencies. Engineered for lightning-fast execution and optimal memory efficiency. |
+| 🛡️ **Uncompromising Security** | Peace of mind out of the box — context-aware XSS protection via the Latte Engine and robust anti-SQL injection powered by Medoo. |
+| 🚀 **Enterprise-Ready** | A pristine MVC architecture harmonized with Bramus Router, delivering enterprise-grade performance and scalability. |
+| 🔓 **True Open Source** | Complete freedom and ownership. Free to use for both personal passion projects and commercial masterpieces. |
 
 ---
 
-## 3. Technology Architecture / Arkitetura Teknolojia
+## 🧰 Technology Stack
 
-**[EN]**
-- **Infrastructure:** Podman / Docker (PHP 8.2 & PostgreSQL 15).
-- **Router:** Bramus Router (Elegant routing syntax like Laravel).
-- **ORM / Database:** Medoo Framework (Lightweight database access).
-- **Template Engine:** Latte Engine (Clean separation of PHP logic and HTML design).
-- **Email:** PHPMailer (Industry standard for SMTP).
-
-**[TET]**
-- **Infrastruktura:** Podman / Docker (PHP 8.2 no PostgreSQL 15).
-- **Router:** Bramus Router (Sintaxe elegante hanesan Laravel).
-- **ORM / Database:** Medoo Framework (Aksesu database ne'ebé kmaan).
-- **Template Engine:** Latte Engine (Haketak lójika PHP no dezeñu HTML ho moos).
-- **Email:** PHPMailer (Standar indústria ba SMTP).
+- **Infrastructure** : Podman / Docker (PHP 8.2 & PostgreSQL 15)
+- **Routing** : Bramus Router — elegant, object-oriented routing syntax
+- **ORM / Database** : Medoo Framework — the lightest and most agile database access layer
+- **Template Engine** : Latte Engine — ultra-secure, context-aware PHP templating
+- **Mail System** : PHPMailer — the industry standard for reliable SMTP delivery
 
 ---
 
-## 4. Quick Start (Installation) / Oinsá Instala
+## 📁 Directory Structure
+| Direktori | Fungsi |
+|-----------|--------|
+| `app/` | Application logic — core Controllers and Models |
+| `config/` | Baseline system and environment configurations |
+| `public/` | Document root (entry point: `index.php` & `.htaccess`) |
+| `resources/views/` | Presentation layer — Latte Engine UI templates |
+| `routes/` | Centralized URL routing definitions (`web.php`) |
+| `storage/` | Secure cache, temporary data, and uploads (⚠️ ignored in Git) |
+| `vendor/` | External Composer dependencies (⚠️ ignored in Git) |
 
-**[EN]** Since Decor uses full containerization, you don't need to install PHP or a database on your local machine. Just ensure you have **Podman** (or Docker) and `podman-compose`.
+---
 
-**[TET]** Tanba Decor uza kontainerizasaun tomak, ita la presiza instala PHP ka database iha ita-nia komputadór. Presiza de'it garante katak ita iha **Podman** (ka Docker) no `podman-compose`.
+## 💻 System Requirements
 
-### Step 1 / Pasu 1: Clone Repository
-**[EN]** Clone the repository and copy the environment config.
+| Component | Specification |
+|-----------|---------------|
+| **OS** | Linux (Fedora, Ubuntu, CentOS), macOS, or Windows (via WSL2) |
+| **RAM** | Minimum 4GB recommended for smooth container orchestration |
+| **Prerequisites** | **Podman** + `podman-compose` **OR** **Docker** + `docker-compose` installed |
 
-**[TET]** Clone repozitóriu no kopia konfigurasaun ambiente nian.
+---
+
+## ⚙️ Quick Start (Installation)
+
+Thanks to DECOR's zero-config containerization, you do **not** need to install PHP or databases locally. Follow these steps to get your application up and running in minutes.
+
+
+### Step 1: Clone & Environment Setup
+Clone the repository, navigate into your project, and initialize the environment variables.
+
 ```bash
 git clone https://github.com/deirainsight/decor.git your-new-project
 cd your-new-project
 cp .env.example .env
 ```
-### Step 2 / Pasu 2: Start Server & Database
-**[EN]** Build and turn on the container machine.
 
-**[TET]** Hahu halakan makina kontainer.
+
+
+### Step 2: Initialize Infrastructure
+
+Build and ignite the containerized web server and database.
 ```bash
 podman-compose up -d --build
 ```
-### Step 3 / Pasu 3: Install Core Libraries (Composer)
-**[EN]** Install dependencies inside the dynamic app container.
 
-**[TET]** Instala dependénsia iha kontainer app nian laran.
+### Step 3: Install Core Dependencies
+
+Pull the required PHP libraries securely inside the dynamic application container.
 ```bash
 podman-compose exec app composer install
 ```
-### Step 4 / Pasu 4: Unlock Cache Folder (Linux/SELinux)
-**[EN]** Give permission to the storage folder for caching.
 
-**[TET]** Fó autorizasaun ba folder storage atu bele rai cache.
+Step 4: Secure the Storage Layer
+
+Transfer ownership to the web server and enforce production-ready security permissions.
 ```bash
+
 podman-compose exec app chown -R www-data:www-data /var/www/html/storage
 podman-compose exec app chmod -R 775 /var/www/html/storage
 ```
-### Step 5 / Pasu 5: Access the Application
-**[EN]** Open your web browser and navigate to:
 
-**[TET]** Loke ita-nia web browser no asesu ba:
+### Step 5: Access the Application
+
+Open your favorite web browser and witness your new masterpiece at:
+plaintext
 ```bash
 http://localhost:5351
 ```
 
+    Note: The port and database credentials can be customized entirely within your .env file.
 
----
+### 🧹 Uninstall Guide
 
-##  Uninstall / Oinsá Halakon Projetu
-
-**[EN]** If you want to completely remove the project, you must first stop the containers. Because the `storage` folder is securely owned by the web server (`www-data`), you will need advanced privileges to delete the directory.
-
-
-### Step 1  Stop and Clean Containers
-**[EN]** Stop the running containers and remove their volumes.
+If you need to completely remove the project, you must handle the securely locked storage folder with advanced privileges.
+Step 1: Stop and Clean Containers
 ```bash
+
 podman-compose down -v
 ```
+### Step 2: Delete Project Folder
 
-### Step 2 Delete Project Folder
-**[EN]** Move out of the project folder and delete it permanently. Choose one of the commands below depending on your system:
+Move out of the project directory and execute one of the following commands based on your system:
 
 ### Option A (Podman Native - Recommended):
 ```bash
+
 cd ..
 podman unshare rm -rf your-new-project
 ```
 ### Option B (Linux sudo / Root):
 ```bash
+
 cd ..
 sudo rm -rf your-new-project
 ```
+## 🙏 Open Source Credits & Acknowledgements
+
+The DECOR Framework is built upon the extraordinary work of the open-source community. We proudly acknowledge and thank the creators and maintainers of the following core libraries that power this starter kit.
+
+---
+
+### 📦 Core Dependencies & Licenses
+
+| Library | Version | License | Description |
+| :--- | :--- | :--- | :--- |
+| **[bramus/router](https://github.com/bramus/router)** | `v1.6.1` | **MIT** | A lightweight, object-oriented PHP routing engine. Handles all HTTP requests and endpoint mapping with elegant, Laravel-like syntax ready for enterprise scale. |
+| **[catfan/medoo](https://github.com/catfan/Medoo)** | `v2.5.0` | **MIT** | The lightest and most agile PHP database framework. Serves as the core ORM layer, delivering optimized database access with robust SQL-Injection protection out of the box. |
+| **[latte/latte](https://github.com/nette/latte)** | `v3.1.6` | **BSD-3-Clause** | An exceptionally secure and intuitive template engine. Enforces clean separation of PHP logic and HTML design with context-aware, automated smart XSS protection. |
+| **[phpmailer/phpmailer](https://github.com/PHPMailer/PHPMailer)** | `v6.12.0` | **LGPL-2.1** | The industry-standard email creation and transport class. Integrated to ensure reliable, secure, and authenticated SMTP email delivery for enterprise requirements. |
+
+---
+
+> [!NOTE]
+> **Legal Disclaimer:** The DECOR Boilerplate itself is free to use for both personal and commercial projects. However, developers are responsible for complying with the terms, conditions, and copyright notices of the respective open-source licenses mentioned above when deploying applications into production.
+---
+
